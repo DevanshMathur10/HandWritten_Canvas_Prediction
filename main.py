@@ -5,16 +5,6 @@ import numpy as np
 from PIL import ImageOps
 import os
 
-def printpred():
-    im = Image.open('MACHINELEARNING/DRAW_PRED/image.jpg').convert("L")
-    im1=im.resize((28,28))
-    im2 = ImageOps.invert(im1)
-    # im2.show()
-    arr=np.array(im2.getdata()).reshape(1,28,28,1)
-    num=predictans(arr)
-    print(num)
-    return num
-
 class DrawingApp:
     def __init__(self, root):
         self.root = root
